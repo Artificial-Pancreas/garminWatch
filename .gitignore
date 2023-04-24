@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Garmin Monkey 
+*/bin
+.vscode
+.DS_Store
+developer_key

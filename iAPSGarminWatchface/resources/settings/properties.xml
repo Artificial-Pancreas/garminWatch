@@ -1,0 +1,7 @@
+<properties>
+
+    <property id="PrimaryColor" type="number">0xFFFFFF</property>
+    <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="UseMilitaryFormat" type="boolean">true</property>
+
+</properties>

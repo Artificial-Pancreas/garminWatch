@@ -1,0 +1,31 @@
+<layout id="WatchFace">
+    <drawable class="Background" />
+
+    
+
+    <!-- Time -->
+    <text-area id="TimeLabel" width="fill" height="20%" x="center" y="10%" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+
+    <!-- Header -->
+    <drawable class="HeaderDrawable" />
+
+    <drawable id="line1" />
+
+    <!-- Center -->
+    <label id="IOBLabel" text="10.05 U" x="10%" y="50%" font="Gfx.FONT_TINY" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT|Gfx.TEXT_JUSTIFY_VCENTER" />
+    <label id="COBLabel" text="120 g" x="50%" y="50%" font="Gfx.FONT_TINY" color="Graphics.COLOR_GREEN" justification="Graphics.TEXT_JUSTIFY_CENTER|Gfx.TEXT_JUSTIFY_VCENTER" />
+    <drawable id="Eventual" />
+    <label id="EventualBGLabel" text="5.5" x="90%" y="50%" font="Gfx.FONT_TINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_RIGHT|Gfx.TEXT_JUSTIFY_VCENTER" />
+
+    <drawable id="line2" />
+
+    <!-- Info -->
+    <drawable id="HeartRate" />
+    <label id="HRLabel" text="73" x="30%" y="68%" font="Gfx.FONT_TINY" color="Graphics.COLOR_LT_GRAY" justification="Graphics.TEXT_JUSTIFY_LEFT|Gfx.TEXT_JUSTIFY_VCENTER" />
+    <drawable id="StepsIcon" />
+    <label id="StepsLabel" text="12345" x="58%" y="68%" font="Gfx.FONT_TINY" color="Graphics.COLOR_LT_GRAY" justification="Graphics.TEXT_JUSTIFY_LEFT|Gfx.TEXT_JUSTIFY_VCENTER" />
+
+    <!-- Date -->
+    <text-area id="DateLabel" width="fill" height="20%" x="center" y="80%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    
+</layout>

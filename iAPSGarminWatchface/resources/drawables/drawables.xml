@@ -1,0 +1,84 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="launcher_40_40.png" />
+    <drawable-list id="line1">
+        <shape type="rectangle" x="0" y="40%" width="100%" height="1" color="Graphics.COLOR_LT_GRAY"/>
+    </drawable-list>
+
+    <drawable-list id="line2">
+        <shape type="rectangle" x="0" y="60%" width="100%" height="1" color="Graphics.COLOR_LT_GRAY"/>
+    </drawable-list>
+
+    <drawable-list id="Eventual">
+        <bitmap id="arrow2" filename="right-arrow.svg" x="73%" y="49%" scaleX="4%" scaleY="4%" scaleRelativeTo="screen">
+            <palette>
+                <color>FFFFFF</color>
+            </palette> 
+        </bitmap>
+    </drawable-list>
+
+    <drawable-list id="HeartRate">
+        <bitmap id="HR" filename="heart.svg" x="20%" y="65%" scaleY="7%" scaleRelativeTo="screen">
+            <palette>
+                <color>FF0000</color>
+            </palette> 
+        </bitmap>
+    </drawable-list>
+    <drawable-list id="StepsIcon">
+        <bitmap id="Steps" filename="steps.svg" x="45%" y="65%" scaleY="15%" scaleRelativeTo="screen">
+            <palette>
+                <color>FFFFFF</color>
+            </palette> 
+        </bitmap>
+    </drawable-list>
+
+    <!-- Arrows -->
+
+    <bitmap id="Flat" filename="Flat.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="Unknown" filename="Unknown.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveUp" filename="FortyFiveUp.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveDown" filename="FortyFiveDown.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleUp" filename="SingleUp.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleDown" filename="SingleDown.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleUp" filename="DoubleUp.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleDown" filename="DoubleDown.svg" scaleX="5%" scaleY="5%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+    
+</drawables>
