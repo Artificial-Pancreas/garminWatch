@@ -24,3 +24,6 @@ You don't find your device/watch in release... ask to Discord in the channel : h
 
 You need to install Monkey C and compile with the use of Visual Studio Code. 
 All information are available here : https://developer.garmin.com/connect-iq/overview/ 
+
+
+(c) Copyright Artificial-Pancreas 2023
