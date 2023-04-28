@@ -116,7 +116,7 @@ class iAPSWatchfaceView extends WatchUi.WatchFace {
             if (iob instanceof Number) {
                 iobString = (iob == null) ? "--" : iob.format("%3.2f") + " U";
             } else {
-                iobString = (iob == null) ? "--" : iob.toNumber().format("%3.2f") + " U";
+                iobString = (iob == null) ? "--" : iob.toDouble().format("%3.2f") + " U";
             }
             
             view.setText(iobString);
@@ -137,7 +137,7 @@ class iAPSWatchfaceView extends WatchUi.WatchFace {
             if (cob instanceof Number) {
               cobString = (cob == null) ? "--" : cob.format("%3d") + " g";
             } else {
-              cobString = (cob == null) ? "--" : cob.toNumber().format("%3d") + " g";
+              cobString = (cob == null) ? "--" : cob.toDouble().format("%3d") + " g";
             }
             view.setText(cobString);
             return;

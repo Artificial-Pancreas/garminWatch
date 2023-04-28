@@ -1,8 +1,8 @@
 {
   "glucose": "140",
-  "lastLoopDateInterval": 1692179861,
+  "lastLoopDateInterval": 1682712490,
   "delta": "-2",
-  "iob": "2.3",
-  "cob": "70",
+  "iob": "2.42",
+  "cob": "70.2",
   "eventualBGRaw": "100"
 }
