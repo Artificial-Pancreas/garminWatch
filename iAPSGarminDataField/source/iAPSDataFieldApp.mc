@@ -41,7 +41,8 @@ class iAPSDataFieldApp extends Application.AppBase {
     }
 
     function onBackgroundData(data) {
-        Application.Storage.setValue("status", data as Dictionary);
+        // for Fenix5
+        //Application.Storage.setValue("status", data as Dictionary);
         WatchUi.requestUpdate();
     }
 

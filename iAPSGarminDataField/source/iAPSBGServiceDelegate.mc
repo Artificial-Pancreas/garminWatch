@@ -30,8 +30,9 @@ class iAPSBGServiceDelegate extends System.ServiceDelegate {
         System.println("Temp event");
         // call the callback if data is available
         Communications.transmit("status", null, new CommsRelay(method(:onTransmitComplete)));
-        phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
-        Communications.registerForPhoneAppMessages(phoneCallback);
+        //for fenix 5
+        //phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
+        //Communications.registerForPhoneAppMessages(phoneCallback);
         Background.exit(null);
     
     }

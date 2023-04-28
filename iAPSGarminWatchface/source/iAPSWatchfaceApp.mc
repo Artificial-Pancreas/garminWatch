@@ -38,7 +38,8 @@ class iAPSWatchfaceApp extends Application.AppBase {
     }
 
     function onBackgroundData(data) {
-        Application.Storage.setValue("status", data as Dictionary);
+       //fenix 5
+       // Application.Storage.setValue("status", data as Dictionary);
         WatchUi.requestUpdate();
     }
 
