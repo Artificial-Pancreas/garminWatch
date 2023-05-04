@@ -38,8 +38,18 @@ class iAPSWatchfaceApp extends Application.AppBase {
     }
 
     function onBackgroundData(data) {
-       //fenix 5
-       // Application.Storage.setValue("status", data as Dictionary);
+       // for Fenix5
+       if (Background has :registerForPhoneAppMessageEvent) {
+
+       } else {
+            if (data instanceof Number) {
+                System.println("Not a dictionary");
+        } else {
+                Application.Storage.setValue("status", data as Dictionary);
+                Background.registerForTemporalEvent(new Time.Duration(5 * 60));
+        }
+       }
+        
         WatchUi.requestUpdate();
     }
 

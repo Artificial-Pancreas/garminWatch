@@ -19,6 +19,9 @@ class iAPSBGServiceDelegate extends System.ServiceDelegate {
 
     function initialize() {
         ServiceDelegate.initialize();
+        //for fenix 5
+        phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
+        Communications.registerForPhoneAppMessages(phoneCallback);
     }
 
     function onReceiveMessage(msg)
@@ -30,9 +33,6 @@ class iAPSBGServiceDelegate extends System.ServiceDelegate {
         System.println("Temp event");
         // call the callback if data is available
         Communications.transmit("status", null, new CommsRelay(method(:onTransmitComplete)));
-        //for fenix 5
-        //phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
-        //Communications.registerForPhoneAppMessages(phoneCallback);
         Background.exit(null);
     
     }

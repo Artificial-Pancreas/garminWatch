@@ -42,7 +42,17 @@ class iAPSDataFieldApp extends Application.AppBase {
 
     function onBackgroundData(data) {
         // for Fenix5
-        //Application.Storage.setValue("status", data as Dictionary);
+        
+        if (Background has :registerForPhoneAppMessageEvent) {
+            //nothing to do 
+        } else {
+            if (data instanceof Number) {
+                 System.println("Not a dictionary");
+            } else {
+                   Application.Storage.setValue("status", data as Dictionary);
+            }
+            Background.registerForTemporalEvent(new Time.Duration(5 * 60));
+        }
         WatchUi.requestUpdate();
     }
 
@@ -58,8 +68,6 @@ class iAPSDataFieldApp extends Application.AppBase {
     function getServiceDelegate() {
         return [new iAPSBGServiceDelegate()];
     }
-
-
 }
 
 function getApp() as iAPSDataFieldApp {

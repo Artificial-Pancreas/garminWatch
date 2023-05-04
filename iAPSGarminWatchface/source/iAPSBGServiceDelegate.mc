@@ -17,9 +17,12 @@ import Toybox.Communications;
 class iAPSBGServiceDelegate extends System.ServiceDelegate {
     var phoneCallback;
 
-    function initialize() {
+    function initialize(){
         ServiceDelegate.initialize();
-    }
+        //for fenix 5
+        phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
+        Communications.registerForPhoneAppMessages(phoneCallback);
+    } 
 
     function onReceiveMessage(msg)
 	{
@@ -29,10 +32,6 @@ class iAPSBGServiceDelegate extends System.ServiceDelegate {
     function onTemporalEvent() {
         System.println("Temp event");
         Communications.transmit("status", null, new CommsRelay(method(:onTransmitComplete)));
-        // call the callback if data is available
-        //fenix 5 only
-        //phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
-        //Communications.registerForPhoneAppMessages(phoneCallback);
         Background.exit(null);
     }
 
