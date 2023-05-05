@@ -1,3 +1,105 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_40_40.png" />
+
+    <!-- Arrows -->
+
+    <bitmap id="Flat" filename="Flat.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="Unknown" filename="Unknown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveUp" filename="FortyFiveUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveDown" filename="FortyFiveDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleUp" filename="SingleUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleDown" filename="SingleDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleUp" filename="DoubleUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleDown" filename="DoubleDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
+
+    <!-- Arrows black-->
+
+    <bitmap id="FlatB" filename="Flat.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="UnknownB" filename="Unknown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveUpB" filename="FortyFiveUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="FortyFiveDownB" filename="FortyFiveDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleUpB" filename="SingleUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="SingleDownB" filename="SingleDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleUpB" filename="DoubleUp.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+    <bitmap id="DoubleDownB" filename="DoubleDown.svg" scaleX="7%" scaleY="7%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>000000</color>
+        </palette> 
+    </bitmap>
+
+
 </drawables>

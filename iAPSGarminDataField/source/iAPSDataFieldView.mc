@@ -13,6 +13,7 @@ import Toybox.WatchUi;
 
 
 class iAPSDataFieldView extends WatchUi.DataField {
+
     function initialize() {
         DataField.initialize();   
     }
@@ -53,7 +54,9 @@ class iAPSDataFieldView extends WatchUi.DataField {
             var valueViewDelta = View.findDrawableById("valueDelta"); 
             valueViewDelta.locX = valueViewDelta.locX - 40;   
             valueViewDelta.locY = valueViewDelta.locY + 20;   
-
+            var valueViewArrow = View.findDrawableById("arrow"); 
+            valueViewArrow.locX = valueView.locX + 30 ;  
+            valueViewArrow.locY = valueViewArrow.locY - 10 ;   
         }
 
         (View.findDrawableById("label") as Text).setText(Rez.Strings.label);
@@ -99,18 +102,32 @@ class iAPSDataFieldView extends WatchUi.DataField {
         var value = View.findDrawableById("value") as Text;
         var valueTime = View.findDrawableById("valueTime") as Text;
         var valueDelta = View.findDrawableById("valueDelta") as Text;
+       
         if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             value.setColor(Graphics.COLOR_WHITE);
             valueTime.setColor(Graphics.COLOR_WHITE);
-            valueDelta.setColor(Graphics.COLOR_WHITE);
+            valueDelta.setColor(Graphics.COLOR_WHITE);  
+           
         } else {
             value.setColor(Graphics.COLOR_BLACK);
             valueTime.setColor(Graphics.COLOR_BLACK);
             valueDelta.setColor(Graphics.COLOR_BLACK);
+            
         }
+
+
         value.setText(bgString);
         valueDelta.setText(deltaString);
         valueTime.setText(loopString);
+
+        var arrowView = View.findDrawableById("arrow") as Bitmap;   
+        if (getBackgroundColor() == Graphics.COLOR_BLACK) {
+             arrowView.setBitmap(getDirection(status));   
+        }  
+        else {
+            arrowView.setBitmap(getDirectionBlack(status));
+        }
+        
 
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
@@ -163,5 +180,90 @@ class iAPSDataFieldView extends WatchUi.DataField {
 
         return deltaString;
     }
+
+    function getDirectionBlack(status) as BitmapType {
+        var bitmap = WatchUi.loadResource(Rez.Drawables.UnknownB);
+        if (status instanceof Dictionary)  {
+            var trend = status["trendRaw"] as String;
+            if (trend == null) {
+                return bitmap;
+            }
+
+            switch (trend) {
+                case "Flat":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.FlatB);
+                    break;
+                case "SingleUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.SingleUpB);
+                    break;
+                case "SingleDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.SingleDownB);
+                    break;
+                case "FortyFiveUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.FortyFiveUpB);
+                    break;
+                case "FortyFiveDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.FortyFiveDownB);
+                    break;
+                case "DoubleUp":
+                case "TripleUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.DoubleUpB);
+                    break;
+                case "DoubleDown":
+                case "TripleDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.DoubleDownB);
+                    break;
+                default: break;
+            }
+
+            return bitmap;
+        } else {
+            return bitmap;
+        }
+        
+    }
+
+    function getDirection(status) as BitmapType {
+        var bitmap = WatchUi.loadResource(Rez.Drawables.Unknown);
+        if (status instanceof Dictionary)  {
+            var trend = status["trendRaw"] as String;
+            if (trend == null) {
+                return bitmap;
+            }
+
+            switch (trend) {
+                case "Flat":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.Flat);
+                    break;
+                case "SingleUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.SingleUp);
+                    break;
+                case "SingleDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.SingleDown);
+                    break;
+                case "FortyFiveUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.FortyFiveUp);
+                    break;
+                case "FortyFiveDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.FortyFiveDown);
+                    break;
+                case "DoubleUp":
+                case "TripleUp":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.DoubleUp);
+                    break;
+                case "DoubleDown":
+                case "TripleDown":
+                    bitmap = WatchUi.loadResource(Rez.Drawables.DoubleDown);
+                    break;
+                default: break;
+            }
+
+            return bitmap;
+        } else {
+            return bitmap;
+        }
+        
+    }
+
 
 }

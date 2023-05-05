@@ -1,8 +1,9 @@
 {
-  "glucose": "210",
-  "lastLoopDateInterval": 1683299799,
-  "delta": "-2",
+  "glucose": "60",
+  "lastLoopDateInterval": 1683316189,
+  "delta": "-20",
   "iob": "2.42",
   "cob": "70.2",
-  "eventualBGRaw": "100"
+  "eventualBGRaw": "100",
+  "trendRaw":"FortyFiveDown"
 }

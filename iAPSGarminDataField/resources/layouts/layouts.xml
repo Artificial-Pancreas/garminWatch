@@ -6,6 +6,11 @@
         <label id="value" x="center" y="center" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_SYSTEM_LARGE" />
         <label id="valueDelta" x="center" y="center" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_SYSTEM_SMALL" />
         <label id="valueTime" x="center" y="center" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_SYSTEM_XTINY" />
+        <bitmap id="arrow" x="center" y="center" filename="../drawables/Unknown.svg" scaleX="8%" scaleY="8%" scaleRelativeTo="screen"> 
+        <palette>
+            <color>FFFFFF</color>
+        </palette> 
+    </bitmap>
     </layout>
 
     <!-- Layouts used for the for the four quadrants. -->

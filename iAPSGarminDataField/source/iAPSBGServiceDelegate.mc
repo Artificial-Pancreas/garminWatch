@@ -35,12 +35,10 @@ class iAPSBGServiceDelegate extends System.ServiceDelegate {
         Background.exit(msg.data);
     }
 
-
     function onTemporalEvent() {
         System.println("Temp event");
         Communications.transmit("status", null, new CommsRelay(method(:onTransmitComplete)));
         Background.exit(null);
-    
     }
 
     function onPhoneAppMessage(msg) {
