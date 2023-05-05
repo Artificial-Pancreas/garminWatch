@@ -16,6 +16,9 @@ import Toybox.Communications;
 
 (:background)
 class iAPSWatchfaceApp extends Application.AppBase {
+
+    var inBackground=false;
+
     function initialize() {
         AppBase.initialize();
     }
@@ -29,8 +32,10 @@ class iAPSWatchfaceApp extends Application.AppBase {
             if (Background has :registerForPhoneAppMessageEvent) {
                 Background.registerForPhoneAppMessageEvent();
                 System.println("****background is ok****");
-            } 
-            System.println("****background is ok****");
+            } else {
+                System.println("****registerForPhoneAppMessageEvent is not available****");
+            }
+            
         } else {
             System.println("****background not available on this device****");
         }
@@ -38,23 +43,29 @@ class iAPSWatchfaceApp extends Application.AppBase {
     }
 
     function onBackgroundData(data) {
-       // for Fenix5
-       if (Background has :registerForPhoneAppMessageEvent) {
-
-       } else {
-            if (data instanceof Number) {
-                System.println("Not a dictionary");
+       if (data instanceof Number || data == null) {
+                 System.println("Not a dictionary");
         } else {
-                Application.Storage.setValue("status", data as Dictionary);
-                Background.registerForTemporalEvent(new Time.Duration(5 * 60));
-        }
-       }
-        
-        WatchUi.requestUpdate();
+                   System.println("try to update the status");
+                   if (Background has :registerForPhoneAppMessageEvent) {
+                        System.println("updated with registerForPhoneAppMessageEvent");
+                        // Application.Storage.setValue("status", data as Dictionary);
+                    } else {
+                        System.println("update status");
+                        Application.Storage.setValue("status", data as Dictionary);
+                        Background.registerForTemporalEvent(new Time.Duration(5 * 60));    
+                    }
+            } 
+         System.println("requestUpdate");
+         WatchUi.requestUpdate();
     }
 
     // onStop() is called when your application is exiting
     function onStop(state as Dictionary?) as Void {
+        if(!inBackground) {
+            System.println("stop temp event");
+    		Background.deleteTemporalEvent();
+    	}
     }
 
     // Return the initial view of your application here
@@ -68,6 +79,8 @@ class iAPSWatchfaceApp extends Application.AppBase {
     }
 
     function getServiceDelegate() {
+        inBackground=true;
+        System.println("start background");
         return [new iAPSBGServiceDelegate()];
     }
 }
