@@ -13,11 +13,8 @@ import Toybox.WatchUi;
 
 
 class iAPSDataFieldView extends WatchUi.DataField {
-
-   
     function initialize() {
-        DataField.initialize();
-       
+        DataField.initialize();   
     }
 
     // Set your layout here. Anytime the size of obscurity of
@@ -145,10 +142,9 @@ class iAPSDataFieldView extends WatchUi.DataField {
 
     function getLoopColor(min as Number) as Number {
         if (min < 0) {
-            return Graphics.COLOR_WHITE as Number;
+            return getBackgroundColor() as Number;
         } else if (min <= 5) {
-            return Graphics.COLOR_WHITE as Number;
-            // return Graphics.COLOR_GREEN as Number;
+            return getBackgroundColor() as Number;
         } else if (min <= 10) {
             return Graphics.COLOR_YELLOW as Number;
         } else {

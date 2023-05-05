@@ -15,30 +15,37 @@ import Toybox.Communications;
 
 (:background)
 class iAPSBGServiceDelegate extends System.ServiceDelegate {
-    var phoneCallback;
+
 
     function initialize() {
         ServiceDelegate.initialize();
-        //for fenix 5
-        phoneCallback = method(:onReceiveMessage) as Communications.PhoneMessageCallback;
-        Communications.registerForPhoneAppMessages(phoneCallback);
+        //for fenix 5 if required 
+        
+         if (Background has :registerForPhoneAppMessageEvent) {
+                // nothing to do 
+        } else {
+                Communications.registerForPhoneAppMessages(method(:onReceiveMessage) as Communications.PhoneMessageCallback);
+                System.println("****add the registerForPhoneAppMessages done****");
+        }
     }
 
-    function onReceiveMessage(msg)
-	{
+    function onReceiveMessage(msg) {
+        System.println("a message from onReceiveMessage! ");
+        System.println(msg);
         Background.exit(msg.data);
-	}
+    }
+
 
     function onTemporalEvent() {
         System.println("Temp event");
-        // call the callback if data is available
         Communications.transmit("status", null, new CommsRelay(method(:onTransmitComplete)));
         Background.exit(null);
     
     }
 
     function onPhoneAppMessage(msg) {
-        System.println(msg.data);
+        System.println("****onPhoneAppMessage*****");
+        System.println(msg);
         Application.Storage.setValue("status", msg.data as Dictionary);
         Background.exit(null);
     }

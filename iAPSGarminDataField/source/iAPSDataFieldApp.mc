@@ -14,9 +14,10 @@ import Toybox.Time;
 import Toybox.System;
 import Toybox.Communications;
 
+(:background)
 class iAPSDataFieldApp extends Application.AppBase {
 
-    var phoneCallback;
+    var inBackground=false;
 
     function initialize() {
         AppBase.initialize();
@@ -32,7 +33,7 @@ class iAPSDataFieldApp extends Application.AppBase {
                 Background.registerForPhoneAppMessageEvent();
                 System.println("****background is ok****");
             } else {
-                  System.println("****registerForPhoneAppMessageEvent is not available****");
+                System.println("****registerForPhoneAppMessageEvent is not available****");
             }
             
         } else {
@@ -40,24 +41,30 @@ class iAPSDataFieldApp extends Application.AppBase {
         }
     }
 
-    function onBackgroundData(data) {
-        // for Fenix5
-        
-        if (Background has :registerForPhoneAppMessageEvent) {
-            //nothing to do 
-        } else {
-            if (data instanceof Number) {
+    function onBackgroundData(data) {  
+        if (data instanceof Number || data == null) {
                  System.println("Not a dictionary");
-            } else {
-                   Application.Storage.setValue("status", data as Dictionary);
-            }
-            Background.registerForTemporalEvent(new Time.Duration(5 * 60));
-        }
-        WatchUi.requestUpdate();
+        } else {
+                   System.println("try to update the status");
+                   if (Background has :registerForPhoneAppMessageEvent) {
+                        System.println("updated with registerForPhoneAppMessageEvent");
+                        // Application.Storage.setValue("status", data as Dictionary);
+                    } else {
+                        System.println("update status");
+                        Application.Storage.setValue("status", data as Dictionary);
+                        Background.registerForTemporalEvent(new Time.Duration(5 * 60));    
+                    }
+            } 
+         System.println("requestUpdate");
+         WatchUi.requestUpdate();
     }
 
     // onStop() is called when your application is exiting
     function onStop(state as Dictionary?) as Void {
+        if(!inBackground) {
+            System.println("stop temp event");
+    		Background.deleteTemporalEvent();
+    	}
     }
 
     //! Return the initial view of your application here
@@ -66,6 +73,8 @@ class iAPSDataFieldApp extends Application.AppBase {
     }
 
     function getServiceDelegate() {
+        inBackground=true;
+        System.println("start background");
         return [new iAPSBGServiceDelegate()];
     }
 }

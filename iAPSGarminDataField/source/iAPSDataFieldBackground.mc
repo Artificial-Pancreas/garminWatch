@@ -18,9 +18,7 @@ class Background extends WatchUi.Drawable {
         var dictionary = {
             :identifier => "Background"
         };
-
         Drawable.initialize(dictionary);
-
         mColor = Graphics.COLOR_WHITE;
     }
 
