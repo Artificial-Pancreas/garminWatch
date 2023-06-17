@@ -16,12 +16,15 @@
         <iq:products>
             <iq:product id="edge1030plus"/>
             <iq:product id="edge830"/>
+            <iq:product id="epix2"/>
+            <iq:product id="epix2pro47mm"/>
             <iq:product id="fenix5"/>
             <iq:product id="fenix5plus"/>
             <iq:product id="fenix5s"/>
             <iq:product id="fenix5splus"/>
             <iq:product id="fenix5x"/>
             <iq:product id="fenix5xplus"/>
+            <iq:product id="fenix6pro"/>
             <iq:product id="fenix7"/>
             <iq:product id="fr245"/>
             <iq:product id="fr255s"/>

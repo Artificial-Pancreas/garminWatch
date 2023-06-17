@@ -44,7 +44,7 @@ class HeaderDrawable extends WatchUi.Drawable {
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
 
         dc.drawText(glucoseX  + glucoseWidth + width * 0.01, 
-            glucoseY + (glucoseHeight - deltaHeight) - deltaHeight * 0.2, 
+            glucoseY + (glucoseHeight - deltaHeight) - deltaHeight * 0.1, 
             Graphics.FONT_SYSTEM_XTINY,
             deltaText, 
             Graphics.TEXT_JUSTIFY_LEFT);
